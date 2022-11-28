@@ -7,3 +7,12 @@
     </div>
 </div>
 
+<hr>
+<% @gear.bookings.each do |booking| %>
+ <p>Booked from: <%= booking.start_date %></p>
+ <p>to:<%= booking.end_date %> </p>
+<% end %>
+<hr>
+<%= link_to "Book now", "/gears/#{@gear.id}/bookings/new" %>
+
+
