@@ -36,7 +36,7 @@ class GearsController < ApplicationController
 
   def destroy
     @gear.destroy
-    redirect_to root_path
+    redirect_to user_gears_path(current_user)
   end
 
   private
