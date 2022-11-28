@@ -8,8 +8,8 @@
 </div>
 <hr>
 <% @gear.bookings.each do |booking| %>
-  <p><%= booking.start_date %></p>
-  <p><%= booking.end_date %></p>
+ <p>Booked from: <%= booking.start_date %></p>
+ <p>to:<%= booking.end_date %> </p>
 <% end %>
 <hr>
 <%= link_to "Book now", "/gears/#{@gear.id}/bookings/new" %>
