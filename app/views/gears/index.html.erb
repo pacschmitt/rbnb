@@ -1,13 +1,18 @@
 <h1>Index</h1>
 
 <%= link_to "Upload New gear", new_gear_path, class:"btn btn-primary" %>
-
+<div class="card d-flex flex-wrap">
 <% @gears.each do |gear| %>
-  <div class="cards">
-    <div class="card-body">
-      <%= link_to gear.name, gear_path(gear) %>
+  <div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+  <div>
       <%= render gear %>
     </div>
   </div>
+     <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
+    <img src="" class="card-trip-user avatar-bordered" />
+  </div>
 <% end %>
+</div>
 <%= link_to "Back to main page", root_path, class:"btn btn-primary"%>
