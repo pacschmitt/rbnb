@@ -2,6 +2,5 @@
 
  <%= render "form", gear: @gear %>
 
-<%= link_to "Back to my list", gear_path(@gear) %>
+<%= link_to "Back to my list", user_gears_path(current_user) %>
 <%= link_to "Back to main page", root_path %>
-
