@@ -1,1 +1,6 @@
-<h2>edit</h2>
+ <h2>Edit gear</h2>
+
+ <%= render "form", gear: @gear %>
+
+<%= link_to "Back to my list", gear_path(@gear), class:"btn btn-primary" %>
+<%= link_to "Back to main page", root_path, class:"btn btn-primary"%>
