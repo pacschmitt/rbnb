@@ -1,5 +1,10 @@
 <h2>Hello <%= current_user.first_name %> !</h2>
 
+<% current_user.bookings.each do |booking| %>
+  <p> Name: <%= booking.gear.name %></p>
+  <p>Booked from: <%= booking.start_date %></p>
+  <p>Until: <%= booking.end_date %></p>
+<%end%>
 
 <%= link_to "Modify my profile", edit_user_registration_path %>
 <%= link_to "My Gear", user_gears_path(current_user), class: "dropdown-item" %>

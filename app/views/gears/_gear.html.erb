@@ -1,9 +1,5 @@
 <div id="<%= dom_id gear %>">
-  <p>
-    <strong>Name:</strong>
-    <%= gear.name %>
-  </p>
-
+  <h2><%= link_to gear.name, gear_path(gear) %></h2>
   <p>
     <strong>Description:</strong>
     <%= gear.description %>
