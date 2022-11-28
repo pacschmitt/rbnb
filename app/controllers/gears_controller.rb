@@ -36,13 +36,13 @@ class GearsController < ApplicationController
 
   def destroy
     @gear.destroy
-    redirect_to gears_path
+    redirect_to root_path
   end
 
   private
 
   def gear_params
-    params.require(:gear).permit(:name, :description, :price, :photo)
+    params.require(:gear).permit(:name, :description, :price, :category)
   end
 
   def set_gear

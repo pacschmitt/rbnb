@@ -1,1 +1,10 @@
 <h1>Index</h1>
+<% @gears.each do |gear| %>
+  <div class="cards">
+    <div class="card-body">
+      <%= link_to gear.name, gear_path(gear) %>
+      <%= render gear %>
+    </div>
+  </div>
+<% end %>
+<%= link_to "Back to main page", root_path, class:"btn btn-primary"%>
