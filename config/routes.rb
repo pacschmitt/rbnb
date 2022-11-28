@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  get "/about", to: "pages#about"
+  get "/faq", to: "pages#faq"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :users, only: [:show, :edit, :update] do
     resources :gears, only: [:index]
