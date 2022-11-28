@@ -1,6 +1,6 @@
 class GearsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_gear, only: %i[ show edit update destroy ]
+  before_action :set_gear, only: %i[show edit update destroy]
 
   def index
     @gears = Gear.all

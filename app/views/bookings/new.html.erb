@@ -1,0 +1,10 @@
+<h1>Create Booking</h1>
+
+<%= simple_form_for([@gear, @booking]) do |f| %>
+<%= f.input :start_date, as: :date %>
+<%= f.input :end_date, as: :date %>
+<%= f.submit %>
+<% end %>
+<hr>
+<p><%= link_to "Go home", lists_path, class: "btn btn-ligth" %></p>
+
