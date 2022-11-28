@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] do
     resources :gears, only: [:index]
   end
-  resources :gears, except: :index
+  resources :gears do
+    resources :bookings, only: %i[new create]
+  end
+  resources :bookings, only: %i[destroy]
   # Defines the root path route ("/")
   # root "articles#index"
 end
