@@ -6,5 +6,13 @@
     <%= link_to "Back to main page", root_path%>
     </div>
 </div>
+<hr>
+<% @gear.bookings.each do |booking| %>
+  <p><%= booking.start_date %></p>
+  <p><%= booking.end_date %></p>
+<% end %>
+<hr>
+<%= link_to "Book now", "/gears/#{@gear.id}/bookings/new" %>
+
 
 <%# fix the delete button %>
