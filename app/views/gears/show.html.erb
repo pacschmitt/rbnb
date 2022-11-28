@@ -3,8 +3,6 @@
     <%= render @gear %>
     <%= link_to "Edit", edit_gear_path(@gear), class: "btn btn-primary" %>
     <%= link_to "Delete", gear_path(@gear), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
-    <%= link_to "Back to main page", root_path%>
+    <%= link_to "Back to my Gear", user_gears_path(current_user)%>
     </div>
 </div>
-
-<%# fix the delete button %>
