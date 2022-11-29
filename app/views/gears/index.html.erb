@@ -5,7 +5,11 @@
 <div class="d-flex flex-row gap-3 flex-wrap" >
   <% @gears.each do |gear| %>
     <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <% if gear.photo.key.nil? %>
+      <%= cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", crop: :scale %>
+    <% else %>
+      <%= cl_image_tag gear.photo.key, crop: :fill %>
+    <% end %>
         <div class="card-trip-infos">
             <div>
               <%= render gear %>
