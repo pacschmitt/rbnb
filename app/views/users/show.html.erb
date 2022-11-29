@@ -1,7 +1,7 @@
-<div class="container" data-controller="hello">
+<div class="container col-lg-10 d-flex flex-column text-center" data-controller="hello">
 <h2>Hello <%= current_user.first_name.capitalize %> !</h2>
 
-<button data-action="click->hello#show">Display my bookings</button>
+<button data-action="click->hello#show" class="m-2">Display my bookings</button>
   <div class="d-flex flex-row gap-3 flex-wrap d-none" data-hello-target="bookings">
   <% @bookings.each do |booking| %>
     <div class="card-product">
@@ -13,21 +13,25 @@
       <% end %>
   </div>
 
-<button data-action="click->hello#display">Display my gears</button>
+<button data-action="click->hello#display" class="m-2">Display my gears</button>
   <div class="d-flex flex-row gap-3 flex-wrap d-none" data-hello-target="gears">
     <% @user.gears.each do |gear| %>
-      <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-trip-infos">
-          <div>
-            <%= render gear %>
-          </div>
-        <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="card-trip-user avatar-bordered" />
-       </div>
-      </div>
-    <% end %>
+        <div class="card-trip">
+          <% if gear.photo.key.nil? %>
+            <%= cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", crop: :scale %>
+          <% else %>
+            <%= cl_image_tag gear.photo.key, crop: :fill %>
+          <% end %>
+            <div class="card-trip-infos">
+            <div>
+              <%= render gear %>
+            </div>
+          <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="card-trip-user avatar-bordered" />
+        </div>
+        </div>
+      <% end %>
   </div>
-<%= link_to "Modify my profile", edit_user_registration_path, class:"btn btn-primary" %>
-<%= link_to "Back to main page", root_path, class:"btn btn-primary"%>
+<%= link_to "Modify my profile", edit_user_registration_path, class:"btn btn-primary mt-3" %>
+<%= link_to "Back to main page", root_path, class:"btn btn-primary mt-3"%>
 </div>

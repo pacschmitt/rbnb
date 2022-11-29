@@ -49,7 +49,7 @@ class GearsController < ApplicationController
   private
 
   def gear_params
-    params.require(:gear).permit(:name, :description, :price, :category)
+    params.require(:gear).permit(:name, :description, :price, :category, :photo)
   end
 
   def set_gear
