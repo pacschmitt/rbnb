@@ -1,16 +1,32 @@
 <h2>Hello <%= current_user.first_name %> !</h2>
+<div class="container" data-controller="hello">
 
-<% current_user.bookings.each do |booking| %>
-  <p> Name: <%= booking.gear.name %></p>
-  <p>Booked from: <%= booking.start_date %></p>
-  <p>Until: <%= booking.end_date %></p>
-<%end%>
+<button data-action="click->hello#show">Display my bookings</button>
+  <div class="hidden d-none" data-hello-target="bookings">
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <%= render @bookings %>
+      </div>
+    </div>
+  </div>
 
-<%= link_to "Modify my profile", edit_user_registration_path %>
-<%= link_to "Display my Gear", user_gears_path(current_user), class: "dropdown-item" %>
-<div class="hidden">
-
-
+<button data-action="click->hello#display">Display my gears</button>
+  <div class="hidden d-none" data-hello-target="gears">
+    <% @user.gears.each do |gear| %>
+      <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-trip-infos">
+          <div>
+            <%= render gear %>
+          </div>
+          </div>
+        <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
+        <img src="" class="card-trip-user avatar-bordered" />
+      </div>
+    <% end %>
+  </div>
 </div>
-<%= link_to "My Bookings", "#", class: "dropdown-item" %>
+
+<%= link_to "Modify my profile", edit_user_registration_path, class:"btn btn-primary" %>
 <%= link_to "Back to main page", root_path, class:"btn btn-primary"%>

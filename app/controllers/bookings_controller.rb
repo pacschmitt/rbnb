@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
   def new
     @gear = Gear.find(params[:gear_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
@@ -17,6 +18,7 @@ class BookingsController < ApplicationController
     @gear = Gear.find(params[:gear_id])
     @booking.gear = @gear
     @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to @gear
     else
