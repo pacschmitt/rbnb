@@ -2,17 +2,19 @@
 <div class="container" data-controller="hello">
 
 <button data-action="click->hello#show">Display my bookings</button>
-  <div class="hidden d-none" data-hello-target="bookings">
+  <div class="d-flex flex-row gap-3 flex-wrap d-none" data-hello-target="bookings">
+  <% @bookings.each do |booking| %>
     <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <img src="https://images.unsplash.com/photo-1633526543814-9718c8922b7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
       <div class="card-product-infos">
-        <%= render @bookings %>
+        <%= render booking %>
       </div>
     </div>
+      <% end %>
   </div>
 
 <button data-action="click->hello#display">Display my gears</button>
-  <div class="hidden d-none" data-hello-target="gears">
+  <div class="d-flex flex-row gap-3 flex-wrap d-none" data-hello-target="gears">
     <% @user.gears.each do |gear| %>
       <div class="card-trip">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
@@ -20,9 +22,9 @@
           <div>
             <%= render gear %>
           </div>
-          </div>
         <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
-        <img src="" class="card-trip-user avatar-bordered" />
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="card-trip-user avatar-bordered" />
+       </div>
       </div>
     <% end %>
   </div>

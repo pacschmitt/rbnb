@@ -1,18 +1,21 @@
-<h1>Index</h1>
+<h1>Browse trough our shit</h1>
 
 <%= link_to "Upload New gear", new_gear_path, class:"btn btn-primary" %>
-<div class="card d-flex flex-wrap">
-<% @gears.each do |gear| %>
-  <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-  <div>
-      <%= render gear %>
+<hr>
+<div class="d-flex flex-row gap-3 flex-wrap" >
+  <% @gears.each do |gear| %>
+    <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+            <div>
+              <%= render gear %>
+            </div>
+          <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="card-trip-user avatar-bordered" />
+        </div>
     </div>
-  </div>
-     <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
-    <img src="" class="card-trip-user avatar-bordered" />
-  </div>
-<% end %>
+    <% end %>
 </div>
+
+<hr>
 <%= link_to "Back to main page", root_path, class:"btn btn-primary"%>
