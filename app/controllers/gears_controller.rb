@@ -4,18 +4,22 @@ class GearsController < ApplicationController
 
   def index
     @gears = Gear.all
+    @gears = policy_scope(Gear)
   end
 
   def show
+    authorize @gear
   end
 
   def new
     @gear = Gear.new
+    authorize @gear
   end
 
   def create
     @gear = Gear.new(gear_params)
     @gear.user = current_user
+    authorize @gear
     if @gear.save
       redirect_to gear_path(@gear)
     else
@@ -24,9 +28,11 @@ class GearsController < ApplicationController
   end
 
   def edit
+    authorize @gear
   end
 
   def update
+    authorize @gear
     if @gear.update(gear_params)
       redirect_to gear_path(@gear)
     else
@@ -35,6 +41,7 @@ class GearsController < ApplicationController
   end
 
   def destroy
+    authorize @gear
     @gear.destroy
     redirect_to user_gears_path(current_user)
   end

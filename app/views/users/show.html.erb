@@ -7,6 +7,10 @@
 <%end%>
 
 <%= link_to "Modify my profile", edit_user_registration_path %>
-<%= link_to "My Gear", user_gears_path(current_user), class: "dropdown-item" %>
+<%= link_to "Display my Gear", user_gears_path(current_user), class: "dropdown-item" %>
+<div class="hidden">
+
+
+</div>
 <%= link_to "My Bookings", "#", class: "dropdown-item" %>
 <%= link_to "Back to main page", root_path, class:"btn btn-primary"%>
