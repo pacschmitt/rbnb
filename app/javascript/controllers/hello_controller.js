@@ -1,7 +1,12 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  connect() {
-    this.element.textContent = "Hello World!"
+  static targets = [ "bookings", "gears"]
+  show() {
+    this.bookingsTarget.classList.toggle("d-none")
   }
+  display() {
+    this.gearsTarget.classList.toggle("d-none")
+  }
+
 }
