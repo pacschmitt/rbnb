@@ -5,7 +5,11 @@
   <div class="d-flex flex-row gap-3 flex-wrap d-none" data-hello-target="bookings">
   <% @bookings.each do |booking| %>
     <div class="card-product">
-      <img src="https://images.unsplash.com/photo-1633526543814-9718c8922b7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
+    <% if booking.gear.photo.key.nil? %>
+      <%= cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", crop: :fill %>
+    <% else %>
+      <%= cl_image_tag gear.photo.key, crop: :fill %> 
+    <% end %>
       <div class="card-product-infos">
         <%= render booking %>
       </div>

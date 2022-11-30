@@ -1,5 +1,5 @@
 <div id="<%= dom_id booking %>">
- <h2><%= booking.gear.name %></h2>
+ <h2><%=link_to booking.gear.name, gear_path(booking.gear), class: "name-link text-decoration-none text-dark"%></h2>
   <p>Booked from: <%= booking.start_date %></p>
   <p>to: <%= booking.end_date %></p>
 </div>
