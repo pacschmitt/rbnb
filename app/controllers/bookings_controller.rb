@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_gear
+  before_action :set_gear, except: :destroy
 
   def index
     @bookings = Booking.all
@@ -27,9 +27,9 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    authorize @bookings
     @booking = Booking.find(params[:id])
-    @booking.delete
+    authorize @booking
+    @booking.destroy
     redirect_to root_path
   end
 
