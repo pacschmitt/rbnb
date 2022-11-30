@@ -18,6 +18,10 @@
         <% end %>
     </div>
 
+    <%# <% if policy(booking).destroy? %>
+        <%# <%= link_to "Delete", booking_path(booking), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" }  %>
+    <%# <% end %>
+
   <button data-action="click->hello#display" class="btn btn-paco m-2">Display my gears</button>
     <div class="d-flex flex-row gap-3 flex-wrap d-none" data-hello-target="gears">
       <% @user.gears.each do |gear| %>
