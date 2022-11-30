@@ -1,6 +1,16 @@
-<div class="container-home text-center">
-  <h1>Rent sports gear</h1>
-    <div class="container-image">
-      <%= image_tag "LogoFun" %>
-    </div>
+<%# <div class="home-page page-container">
+  <div class="container-home text-center home-page">
+    <h1>Rent sports gear</h1>
+      <div class="container-image">
+        <%= image_tag "LogoFun" %>
+      <%# </div>
+  </div>
+</div> %>
+
+<div class="banner">
+  <div class="container">
+    <h1>Rent <strong>sports</strong> gear</h1>
+    <p>Change your life and go outside for a while</p>
+    <%= link_to "Browse gear", gears_path, class: "btn btn-home" %>
+  </div>
 </div>
