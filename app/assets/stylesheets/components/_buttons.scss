@@ -1,0 +1,38 @@
+.btn-paco {
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid blue;
+  color: blue;
+  margin-bottom: 3px;
+}
+
+.btn-paco:hover {
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.btn-alfo {
+  border-radius: 25px;
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+}
+
+.btn-alfo:hover {
+  border: 1px solid grey;
+  background-color: rgba(3, 6, 9, 0.3);
+}
+
+.btn-home {
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid white;
+  color: white;
+  margin-bottom: 3px;
+}
+
+.btn-home:hover {
+  border: 1px solid whitesmoke;
+  color: whitesmoke;
+  background-color: rgba(9, 6, 3, 0.3);
+}

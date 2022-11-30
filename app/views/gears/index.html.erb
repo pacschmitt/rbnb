@@ -1,29 +1,28 @@
-<h1>Browse trough our shit</h1>
-
-<%= link_to "Upload New gear", new_gear_path, class:"btn btn-primary" %>
-<hr>
-<div class="d-flex flex-row gap-3 flex-wrap" >
-  <% @gears.each do |gear| %>
-    <div class="card-trip">
-    <% if gear.photo.key.nil? %>
-      <%= cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", crop: :scale %>
-    <% else %>
-      <%= cl_image_tag gear.photo.key, crop: :fill %>
-    <% end %>
-        <div class="card-trip-infos">
-            <div>
-              <%= render gear %>
-            </div>
-          <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
-          <% if gear.user.photo.key.nil? %>
-            <%= cl_image_tag "wschhrw6zws4c53na6yp43y0tc9r", class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% else %>
-            <%= cl_image_tag gear.user.photo.key, width: 40, height: 40, gravity: :auto, class: "card-trip-user avatar-bordered" %>
-          <% end %>
-        </div>
-    </div>
-    <% end %>
+<div class="page-container">
+  <div class="title-top">
+  <h1>Browse trough our shit</h1>
+  <%= link_to "Upload New gear", new_gear_path, class:"btn btn-paco m-2" %>
+  </div>
+  <div class="d-flex flex-row gap-3 flex-wrap" >
+    <% @gears.each do |gear| %>
+      <div class="card-trip">
+      <% if gear.photo.key.nil? %>
+        <%= cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", crop: :scale %>
+      <% else %>
+        <%= cl_image_tag gear.photo.key, crop: :fill %>
+      <% end %>
+          <div class="card-trip-infos">
+              <div>
+                <%= render gear %>
+              </div>
+            <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
+            <% if gear.user.photo.key.nil? %>
+              <%= cl_image_tag "wschhrw6zws4c53na6yp43y0tc9r", class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= cl_image_tag gear.user.photo.key, width: 40, height: 40, gravity: :auto, class: "card-trip-user avatar-bordered" %>
+            <% end %>
+          </div>
+      </div>
+      <% end %>
+  </div>
 </div>
-
-<hr>
-<%= link_to "Back to main page", root_path, class:"btn btn-primary"%>

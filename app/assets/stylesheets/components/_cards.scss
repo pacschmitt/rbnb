@@ -2,7 +2,7 @@
   width: 300px;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px grey;
   border-radius: 5px;
 
 }
@@ -46,7 +46,8 @@
   height: 120px;
   width: 300px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px gray;
+  border-radius: 5px;
   display: flex;
   align-items: center;
 }
@@ -81,4 +82,11 @@
   padding-inline: 5px;
   padding-top: 2px;
   padding-bottom: 2PX;
+}
+
+.title-top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  margin-bottom: 20px;
 }
