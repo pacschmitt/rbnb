@@ -8,34 +8,34 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <%= link_to "Browse Gear", gears_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "About", about_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "F.A.Q", faq_path, class: "nav-link" %>
-          </li>
-              <% if user_signed_in? %>
-                <li class="nav-item dropdown">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <%= link_to "Browse Gear", gears_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "About", about_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "F.A.Q", faq_path, class: "nav-link" %>
+        </li>
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
                 <% if current_user.photo.key.nil? %>
-                  <%= cl_image_tag "https://res.cloudinary.com/df2jp0y94/image/upload/v1669761828/development/dwl90cghmju94tsyc7b0z07wlbmq.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <%= cl_image_tag "wschhrw6zws4c53na6yp43y0tc9r", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                 <% else %>
-                  <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <%= cl_image_tag current_user.photo.key, width: 40, height: 40, gravity: :auto, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                 <% end %>
-                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
-                    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-                  </div>
-                </li>
-              <% else %>
-                <li class="nav-item">
-                  <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-                </li>
-              <% end %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
       </ul>
     </div>
   </div>
