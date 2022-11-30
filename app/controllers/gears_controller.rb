@@ -5,6 +5,12 @@ class GearsController < ApplicationController
   def index
     @gears = Gear.all
     @gears = policy_scope(Gear)
+    @markers = @gears.geocoded.map do |gear|
+      {
+        lat: gear.latitude,
+        lng: gear.longitude
+      }
+    end
   end
 
   def show
@@ -49,7 +55,7 @@ class GearsController < ApplicationController
   private
 
   def gear_params
-    params.require(:gear).permit(:name, :description, :price, :category, :photo)
+    params.require(:gear).permit(:name, :description, :price, :category, :photo, :address)
   end
 
   def set_gear

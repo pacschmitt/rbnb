@@ -8,7 +8,7 @@
     <% if booking.gear.photo.key.nil? %>
       <%= cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", crop: :fill %>
     <% else %>
-      <%= cl_image_tag gear.photo.key, crop: :fill %> 
+      <%= cl_image_tag booking.gear.photo.key, crop: :fill %>
     <% end %>
       <div class="card-product-infos">
         <%= render booking %>
