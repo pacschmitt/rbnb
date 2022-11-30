@@ -1,7 +1,7 @@
 <div class="container col-lg-10 d-flex flex-column text-center" data-controller="hello">
 <h2>Hello <%= current_user.first_name.capitalize %> !</h2>
 
-<button data-action="click->hello#show" class="m-2">Display my bookings</button>
+<button data-action="click->hello#show" class="btn btn-paco m-2">Display my bookings</button>
   <div class="d-flex flex-row gap-3 flex-wrap d-none" data-hello-target="bookings">
   <% @bookings.each do |booking| %>
     <div class="card-product">
@@ -17,7 +17,7 @@
       <% end %>
   </div>
 
-<button data-action="click->hello#display" class="m-2">Display my gears</button>
+<button data-action="click->hello#display" class="btn btn-paco m-2">Display my gears</button>
   <div class="d-flex flex-row gap-3 flex-wrap d-none" data-hello-target="gears">
     <% @user.gears.each do |gear| %>
         <div class="card-trip">
@@ -40,6 +40,6 @@
         </div>
       <% end %>
   </div>
-<%= link_to "Modify my profile", edit_user_registration_path, class:"btn btn-primary mt-3" %>
-<%= link_to "Back to main page", root_path, class:"btn btn-primary mt-3"%>
+<%= link_to "Modify my profile", edit_user_registration_path, class:"btn btn-paco mt-3" %>
+<%= link_to "Back to main page", root_path, class:"btn btn-paco mt-3"%>
 </div>

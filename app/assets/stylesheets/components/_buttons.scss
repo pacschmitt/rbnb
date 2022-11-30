@@ -1,0 +1,19 @@
+.btn-paco {
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid blue;
+  color: blue;
+  margin-bottom: 1px;
+}
+
+.btn-paco:hover {
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.btn-alfo {
+  border-radius: 25px;
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+}
