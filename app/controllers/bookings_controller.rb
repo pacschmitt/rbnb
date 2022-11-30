@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    @bookings = policy_scope(Booking)
   end
 
   def new
@@ -26,6 +27,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    authorize @bookings
     @booking = Booking.find(params[:id])
     @booking.delete
     redirect_to root_path
