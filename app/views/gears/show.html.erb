@@ -1,26 +1,28 @@
-<div class="card-trip">
-   <% if @gear.photo.key.nil? %>
-      <%= cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", crop: :scale %>
-    <% else %>
-      <%= cl_image_tag @gear.photo.key, crop: :fill %>
-    <% end %>
-    <div class="card-trip-infos">
-    <div>
-      <%= render @gear %>
-    </div>
-        <h2 class="card-trip-pricing"><%= @gear.price %> €</h2>
-          <% if @gear.user.photo.key.nil? %>
-            <%= cl_image_tag "wschhrw6zws4c53na6yp43y0tc9r", class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% else %>
-            <%= cl_image_tag @gear.user.photo.key, width: 40, height: 40, gravity: :auto, class: "card-trip-user avatar-bordered" %>
-          <% end %>
-  </div>
-</div>
+<div class="container-show text-center">
+  <div class="image-gear d-flex flex-row ">
+    <% if @gear.photo.key.nil? %>
+        <%= cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", width: 700, height: 400, crop: :scale %>
+      <% else %>
+        <%= cl_image_tag @gear.photo.key, width: 700, height: 400, crop: :scale %>
+      <% end %>
 
+    <hr>
+    <div class="gear-info text-center">
+      <div>
+        <%= render @gear %>
+      </div>
+        <h2 class=""><%= @gear.price %> € / day</h2>
+    </div>
+  </div>
+
+
+  <div class="gear-links mt-4">
     <% if user_signed_in? %>
       <%= link_to "Edit", edit_gear_path(@gear), class: "btn btn-primary" if policy(@gear).edit? %>
       <%= link_to "Delete", gear_path(@gear), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } if policy(@gear).destroy? %>
       <%= link_to "Back to my Gear", user_path(current_user), class: "btn btn-primary"%>
     <% end %>
+  </div>
 <hr>
     <%= link_to "Book now", "/gears/#{@gear.id}/bookings/new", class: "btn btn-primary"%>
+</div>
