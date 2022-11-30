@@ -9,8 +9,8 @@
       <%= render @gear %>
     </div>
         <h2 class="card-trip-pricing"><%= @gear.price %> €</h2>
-          <% if current_user.photo.key.nil? %>
-            <%= cl_image_tag "wschhrw6zws4c53na6yp43y0tc9r", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if @gear.user.photo.key.nil? %>
+            <%= cl_image_tag "wschhrw6zws4c53na6yp43y0tc9r", class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
             <%= cl_image_tag @gear.user.photo.key, width: 40, height: 40, gravity: :auto, class: "card-trip-user avatar-bordered" %>
           <% end %>
