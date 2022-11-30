@@ -3,7 +3,7 @@
   <h1>Browse trough our shit</h1>
   <%= link_to "Upload New gear", new_gear_path, class:"btn btn-paco m-2" %>
   </div>
-  <div class="d-flex flex-row gap-3 flex-wrap" >
+  <div class="ms-3 d-flex flex-row gap-3 flex-wrap" >
     <% @gears.each do |gear| %>
       <div class="card-trip">
       <% if gear.photo.key.nil? %>
