@@ -1,4 +1,5 @@
 <div class="page-container">
+<div class="banner">
   <div class="container col-lg-10 d-flex flex-column text-center" data-controller="hello">
   <h2>Hello <%= current_user.first_name.capitalize %> !</h2>
 
@@ -27,7 +28,7 @@
       <% @user.gears.each do |gear| %>
           <div class="card-trip">
             <% if gear.photo.key.nil? %>
-              <%= cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", crop: :scale %>
+              <%= image_tag "logo", crop: :scale %>
             <% else %>
               <%= cl_image_tag gear.photo.key, crop: :fill %>
             <% end %>
@@ -50,5 +51,6 @@
     <%= link_to "Upload New gear", new_gear_path, class:"btn btn-paco m-2" %>
   <%= link_to "Modify my profile", edit_user_registration_path, class:"btn btn-paco mt-3" %>
   <%= link_to "Back to main page", root_path, class:"btn btn-paco mt-3"%>
+  </div>
   </div>
 </div>

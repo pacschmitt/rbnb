@@ -1,9 +1,10 @@
 .banner {
   background-size: cover;
   background-position: center;
+  height: 900px;
   padding: 200px 0;
-  margin-top: 80px;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("LogoFun");
+  // margin-top: 50px;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("defaultbanner");
 }
 
 .banner h1 {
@@ -20,4 +21,3 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-
