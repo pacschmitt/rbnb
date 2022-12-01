@@ -16,7 +16,6 @@ class GearsController < ApplicationController
       # SQL
       # @gears = Gear.joins(:user).where(sql_query, query: "%#{params[:query]}%")
       @gears = Gear.global_search(params[:query])
-      image_bg
     else
       @gears = Gear.all
     end

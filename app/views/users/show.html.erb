@@ -28,7 +28,7 @@
       <% @user.gears.each do |gear| %>
           <div class="card-trip">
             <% if gear.photo.key.nil? %>
-              <%= cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", crop: :scale %>
+              <%= image_tag "logo", crop: :scale %>
             <% else %>
               <%= cl_image_tag gear.photo.key, crop: :fill %>
             <% end %>
