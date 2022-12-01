@@ -28,9 +28,9 @@
           <li class="nav-item">
             <%= link_to "F.A.Q", faq_path, class: "link-nav" %>
           </li>
-        </div>
+
           <% if user_signed_in? %>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown ms-3">
                 <% if current_user.photo.key.nil? %>
                     <%= image_tag "defaultprofile", crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                 <% else %>
@@ -42,9 +42,10 @@
               </div>
             </li>
           <% else %>
-            <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <li class="align-items-center">
+                <%= link_to "Login", new_user_session_path, class: "link-nav ms-3" %>
             </li>
+          </div>
           <% end %>
       </ul>
     </div>
