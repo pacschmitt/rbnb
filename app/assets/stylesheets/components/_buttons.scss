@@ -1,7 +1,7 @@
 .btn-paco {
   border-radius: 25px;
   background-color: rgba(0, 0, 0, 0.1);
-  border: 1px solid #00e78c;
+  border: 2px solid #00e78c;
   color: #00e78c;
   margin-bottom: 3px;
   padding-top: 8px;
@@ -9,7 +9,7 @@
 }
 
 .btn-paco:hover {
-  border: 1px solid #03c97b;
+  border: 2px solid #03c97b;
   color: #03c97b;
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -17,12 +17,14 @@
 .btn-alfo {
   border-radius: 25px;
   background-color: transparent;
-  border: 1px solid white;
+  border: 2px solid white;
   color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .btn-alfo:hover {
-  border: 1px solid grey;
+  border: 2px solid grey;
   color: grey;
   background-color: rgba(3, 6, 9, 0.3);
 }
@@ -30,21 +32,21 @@
 .btn-home {
   border-radius: 25px;
   background-color: rgba(0, 0, 0, 0.1);
-  border: 1px solid white;
+  border: 2px solid white;
   color: white;
   margin-bottom: 3px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .btn-home:hover {
-  border: 1px solid whitesmoke;
+  border: 2px solid whitesmoke;
   color: whitesmoke;
   background-color: rgba(9, 6, 3, 0.3);
 }
 
 .search-bar {
   border-radius: 25px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  border: 1px solid #00e78c;
+  border: 2px solid #00e78c;
   background-color: rgba(0, 0, 0, 0.1);
 }
