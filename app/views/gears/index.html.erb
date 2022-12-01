@@ -1,9 +1,9 @@
 <div class="page-container">
   <div class="title-top">
-  <h1>Browse trough our shit</h1>
-  <%= link_to "Upload New gear", new_gear_path, class:"btn btn-paco m-2" %>
+  <h1>Browsing</h1>
+  <%# <%= link_to "Upload New gear", new_gear_path, class:"btn btn-paco m-2" %>
   </div>
-  <div class="ms-3 d-flex flex-row gap-3 flex-wrap" >
+  <div class="ms-3 d-flex flex-row gap-3 flex-wrap mb-5" >
     <% @gears.each do |gear| %>
       <div class="card-trip">
       <% if gear.photo.key.nil? %>
@@ -15,12 +15,14 @@
               <div>
                 <%= render gear %>
               </div>
-            <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
-            <% if gear.user.photo.key.nil? %>
-              <%= cl_image_tag "wschhrw6zws4c53na6yp43y0tc9r", class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <% else %>
-              <%= cl_image_tag gear.user.photo.key, width: 40, height: 40, gravity: :auto, class: "card-trip-user avatar-bordered" %>
-            <% end %>
+              <div class="photo-price">
+                <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
+                <% if gear.user.photo.key.nil? %>
+                  <%= image_tag "defaultprofile", crop: :fill, class: "card-trip-user avatar-bordered" %>
+                <% else %>
+                  <%= cl_image_tag gear.user.photo.key, width: 40, height: 40, gravity: :auto, class: "card-trip-user avatar-bordered" %>
+                <% end %>
+              </div>
           </div>
       </div>
       <% end %>

@@ -1,9 +1,11 @@
 .card-trip {
-  width: 300px;
+  color:black;
+  width: 380px;
   overflow: hidden;
-  background: white;
+  background: rgb(40, 101, 216);
   box-shadow: 0 0 10px grey;
   border-radius: 5px;
+  margin-bottom: 20px;
 
 }
 
@@ -32,6 +34,10 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+.card-trip-infos .photo-price {
+  width: 90px;
 }
 
 .card-trip-infos .card-trip-user {
