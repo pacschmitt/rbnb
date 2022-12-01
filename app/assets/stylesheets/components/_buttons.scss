@@ -4,6 +4,8 @@
   border: 1px solid #00e78c;
   color: #00e78c;
   margin-bottom: 3px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .btn-paco:hover {
@@ -37,4 +39,12 @@
   border: 1px solid whitesmoke;
   color: whitesmoke;
   background-color: rgba(9, 6, 3, 0.3);
+}
+
+.search-bar {
+  border-radius: 25px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 1px solid #00e78c;
+  background-color: rgba(0, 0, 0, 0.1);
 }
