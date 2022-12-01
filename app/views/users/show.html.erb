@@ -2,12 +2,12 @@
   <div class="container col-lg-10 d-flex flex-column text-center" data-controller="hello">
   <h2>Hello <%= current_user.first_name.capitalize %> !</h2>
 
-  <button data-action="click->hello#show" class="btn btn-paco m-2">Display my bookings</button>
+  <button data-action="click->hello#show" class="btn btn-paco m-2 btn-expand">Display my bookings</button>
     <div class="d-flex flex-row gap-3 flex-wrap justify-content-center d-none" data-hello-target="bookings">
     <% @bookings.each do |booking| %>
       <div class="card-product">
       <% if booking.gear.photo.key.nil? %>
-        <%= image_tag "defaultprofile", crop: :fill %>
+        <%= image_tag "logo", crop: :fill %>
       <% else %>
         <%= cl_image_tag booking.gear.photo.key, crop: :fill %>
       <% end %>
@@ -22,7 +22,7 @@
     </div>
 
 
-  <button data-action="click->hello#display" class="btn btn-paco m-2">Display my gears</button>
+  <button data-action="click->hello#display" class="btn btn-paco m-2 btn-expand">Display my gears</button>
     <div class="d-flex flex-row gap-3 flex-wrap justify-content-center d-none" data-hello-target="gears">
       <% @user.gears.each do |gear| %>
           <div class="card-trip">
@@ -44,11 +44,12 @@
                 <% end %>
               </div>
           </div>
+          <%= link_to "Details", gear_path(gear), class: "btn btn-paco details-show" %>
       </div>
         <% end %>
     </div>
-    <%= link_to "Upload New gear", new_gear_path, class:"btn btn-paco m-2" %>
-  <%= link_to "Modify my profile", edit_user_registration_path, class:"btn btn-paco mt-3" %>
-  <%= link_to "Back to main page", root_path, class:"btn btn-paco mt-3"%>
+    <%= link_to "Upload New gear", new_gear_path, class:"btn btn-paco m-2 btn-expand" %>
+  <%= link_to "Modify my profile", edit_user_registration_path, class:"btn btn-paco mt-3 btn-expand" %>
+  <%= link_to "Back to main page", root_path, class:"btn btn-paco mt-3 btn-expand"%>
   </div>
 </div>
