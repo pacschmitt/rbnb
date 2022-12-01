@@ -6,7 +6,7 @@
 <div class="page-container-index">
   <div class="index-container ms-3 d-flex flex-row gap-3 flex-wrap mb-5" >
     <% @gears.each do |gear| %>
-      <div class="card-trip">
+      <div class="card-trip ">
       <% if gear.photo.key.nil? %>
         <%= image_tag "logo", crop: :scale %>
       <% else %>
@@ -25,6 +25,7 @@
                 <% end %>
               </div>
           </div>
+                <%= link_to "Details", gear_path(gear), class: "btn btn-paco " %>
       </div>
       <% end %>
   </div>
