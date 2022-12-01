@@ -4,9 +4,9 @@
       <%= image_tag @image, height: 800, width:1806, crop: :fill %>
     </div>
   </div>
-  <div class="container-show text-center">
+  <div class="container-show">
     <div class="image-gear-show d-flex flex-row ">
-      <div class="photo">
+      <div class="photo text-center">
       <% if @gear.photo.key.nil? %>
           <%= image_tag "logo", width: 500, height: 500,class:"search-bar" %>
         <% else %>
@@ -14,13 +14,15 @@
         <% end %>
       </div>
       <hr>
-      <div class="gear-info text-center text-dark">
+      <div class="gear-info text-dark">
         <div>
           <%= render @gear %>
         </div>
           <h2><%= @gear.price %> € / day</h2>
           <% if @gear.user != current_user %>
+          <div class="text-center">
             <%= link_to "Book now", "/gears/#{@gear.id}/bookings/new", class: "btn btn-paco"%>
+          </div>
           <% end %>
       </div>
     </div>

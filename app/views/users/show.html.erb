@@ -1,6 +1,6 @@
 <div class="page-container user-show">
-  <div class="container col-lg-10 d-flex flex-column text-center" data-controller="hello">
-  <h2>Hello <%= current_user.first_name.capitalize %> !</h2>
+  <div class="container col-lg-10 d-flex flex-column" data-controller="hello">
+  <h2 class="text-center">Hello <%= current_user.first_name.capitalize %> !</h2>
 
   <button data-action="click->hello#show" class="btn btn-paco m-2">Display my bookings</button>
     <div class="d-flex flex-row gap-3 flex-wrap justify-content-center d-none" data-hello-target="bookings">
@@ -14,7 +14,9 @@
         <div class="card-product-infos">
           <%= render booking %>
     <% if policy(booking).destroy? %>
-        <%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" }%>
+    <div class="delete-icon">
+        <%= link_to icon("fa-solid", "trash"), booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" }, class: "text-dark"%>
+    </div>
     <% end %>
         </div>
       </div>

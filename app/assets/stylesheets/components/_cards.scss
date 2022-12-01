@@ -4,7 +4,7 @@
   overflow: hidden;
   background: black;
   box-shadow: 0 0 10px gray;
-  border-radius: 5px;
+  border-radius: 15px;
   margin-bottom: 20px;
 
 }
@@ -49,13 +49,14 @@
 
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 140px;
   width: 300px;
   background: white;
   box-shadow: 0 0 10px gray;
-  border-radius: 5px;
+  border-radius: 15px;
   display: flex;
   align-items: center;
+  justify-content: left;
 }
 
 .card-product img {
@@ -67,15 +68,16 @@
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 9px;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: 4px;
+  color: black;
 }
 
 .card-product .card-product-infos {
