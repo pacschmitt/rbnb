@@ -8,7 +8,7 @@
     <div class="image-gear-show d-flex flex-row ">
       <div class="photo">
       <% if @gear.photo.key.nil? %>
-          <%= cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", width: 700, height: 400, crop: :scale %>
+          <%= image_tag "logo", width: 700, height: 400, crop: :scale %>
         <% else %>
           <%= cl_image_tag @gear.photo.key, width: 700, height: 400, crop: :scale %>
         <% end %>
