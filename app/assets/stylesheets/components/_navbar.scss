@@ -44,3 +44,20 @@
 .user-show {
   margin-top: 0;
 }
+
+.link-nav {
+  color: #fcfcfc;
+  text-decoration: none;
+  margin-inline: 5px;
+}
+
+.link-nav:hover {
+  color: #fcfcfc;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  margin-inline: 10px;
+  padding-inline: 15px;
+}

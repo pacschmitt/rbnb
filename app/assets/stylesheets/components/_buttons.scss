@@ -35,8 +35,9 @@
   border: 2px solid white;
   color: white;
   margin-bottom: 3px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: large;
 }
 
 .btn-home:hover {
@@ -64,4 +65,10 @@
 .details-login-b {
   margin-left: 30px;
   margin-bottom: 15px;
+}
+
+.search-bar:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px solid #00e78c;
+  color: #fcfcfc;
 }
