@@ -1,9 +1,10 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_gear
+  before_action :set_gear, except: :destroy
 
   def index
     @bookings = Booking.all
+    @bookings = policy_scope(Booking)
   end
 
   def new
@@ -20,6 +21,7 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save
       redirect_to @gear
+      flash.alert = "You've created a new Booking"
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,8 +29,10 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    @booking.delete
+    authorize @booking
+    @booking.destroy
     redirect_to root_path
+    flash.alert = "You've Deleted your Booking"
   end
 
   private

@@ -1,41 +1,54 @@
-<div class="container col-lg-10 d-flex flex-column text-center" data-controller="hello">
-<h2>Hello <%= current_user.first_name.capitalize %> !</h2>
+<div class="page-container user-show">
+  <div class="container col-lg-10 d-flex flex-column text-center" data-controller="hello">
+  <h2>Hello <%= current_user.first_name.capitalize %> !</h2>
 
-<button data-action="click->hello#show" class="m-2">Display my bookings</button>
-  <div class="d-flex flex-row gap-3 flex-wrap d-none" data-hello-target="bookings">
-  <% @bookings.each do |booking| %>
-    <div class="card-product">
-      <img src="https://images.unsplash.com/photo-1633526543814-9718c8922b7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
-      <div class="card-product-infos">
-        <%= render booking %>
+  <button data-action="click->hello#show" class="btn btn-paco m-2">Display my bookings</button>
+    <div class="d-flex flex-row gap-3 flex-wrap justify-content-center d-none" data-hello-target="bookings">
+    <% @bookings.each do |booking| %>
+      <div class="card-product">
+      <% if booking.gear.photo.key.nil? %>
+        <%= image_tag "defaultprofile", crop: :fill %>
+      <% else %>
+        <%= cl_image_tag booking.gear.photo.key, crop: :fill %>
+      <% end %>
+        <div class="card-product-infos">
+          <%= render booking %>
+    <% if policy(booking).destroy? %>
+        <%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" }%>
+    <% end %>
+        </div>
       </div>
+        <% end %>
     </div>
-      <% end %>
-  </div>
 
-<button data-action="click->hello#display" class="m-2">Display my gears</button>
-  <div class="d-flex flex-row gap-3 flex-wrap d-none" data-hello-target="gears">
-    <% @user.gears.each do |gear| %>
-        <div class="card-trip">
-          <% if gear.photo.key.nil? %>
-            <%= cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", crop: :scale %>
-          <% else %>
-            <%= cl_image_tag gear.photo.key, crop: :fill %>
-          <% end %>
-            <div class="card-trip-infos">
-            <div>
-              <%= render gear %>
-            </div>
-          <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
-            <% if current_user.photo.key.nil? %>
-                <%= cl_image_tag "wschhrw6zws4c53na6yp43y0tc9r", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <% else %>
-             <%= cl_image_tag gear.user.photo.key, width: 40, height: 40, gravity: :auto, class: "card-trip-user avatar-bordered" %>
-            <% end %>
-        </div>
-        </div>
+
+  <button data-action="click->hello#display" class="btn btn-paco m-2">Display my gears</button>
+    <div class="d-flex flex-row gap-3 flex-wrap justify-content-center d-none" data-hello-target="gears">
+      <% @user.gears.each do |gear| %>
+          <div class="card-trip">
+      <% if gear.photo.key.nil? %>
+        <%= image_tag "logo", crop: :scale %>
+      <% else %>
+        <%= cl_image_tag gear.photo.key, crop: :fill %>
       <% end %>
+          <div class="card-trip-infos">
+              <div>
+                <%= render gear %>
+              </div>
+              <div class="photo-price">
+                <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
+                <% if gear.user.photo.key.nil? %>
+                  <%= image_tag "defaultprofile", crop: :fill, class: "card-trip-user avatar-bordered" %>
+                <% else %>
+                  <%= cl_image_tag gear.user.photo.key, width: 40, height: 40, gravity: :auto, class: "card-trip-user avatar-bordered" %>
+                <% end %>
+              </div>
+          </div>
+      </div>
+        <% end %>
+    </div>
+    <%= link_to "Upload New gear", new_gear_path, class:"btn btn-paco m-2" %>
+  <%= link_to "Modify my profile", edit_user_registration_path, class:"btn btn-paco mt-3" %>
+  <%= link_to "Back to main page", root_path, class:"btn btn-paco mt-3"%>
   </div>
-<%= link_to "Modify my profile", edit_user_registration_path, class:"btn btn-primary mt-3" %>
-<%= link_to "Back to main page", root_path, class:"btn btn-primary mt-3"%>
 </div>

@@ -1,9 +1,11 @@
 .card-trip {
-  width: 300px;
+  color:white;
+  width: 380px;
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: black;
+  box-shadow: 0 0 10px gray;
   border-radius: 5px;
+  margin-bottom: 20px;
 
 }
 
@@ -34,6 +36,10 @@
   position: relative;
 }
 
+.card-trip-infos .photo-price {
+  width: 90px;
+}
+
 .card-trip-infos .card-trip-user {
   position: absolute;
   right: 16px;
@@ -46,7 +52,8 @@
   height: 120px;
   width: 300px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px gray;
+  border-radius: 5px;
   display: flex;
   align-items: center;
 }
@@ -73,4 +80,23 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.name-link:hover {
+  border-radius: 10px;
+  background-color: lightgrey;
+  padding-inline: 5px;
+  padding-top: 2px;
+  padding-bottom: 2PX;
+}
+
+.title-top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.index-container {
+  justify-content: center;
 }

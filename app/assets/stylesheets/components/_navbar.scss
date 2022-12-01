@@ -1,6 +1,20 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 999;
+  color: white !important;
+  background-color: rgba(0, 0, 0, 1)
+}
+
+.nav-items {
+  color: white !important;
+}
+
 .navbar-lewagon {
+
   justify-content: space-between;
-  background: white;
   height: 70px;
 }
 
@@ -9,5 +23,41 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 120px;
+}
+
+.page-container{
+  margin-top: 80px;
+  margin-bottom: 120px;
+}
+
+.page-container-index {
+  margin-top: -150px;
+  margin-bottom: 120px;
+}
+
+.home-page {
+  background-image: url(../../images/LogoFun.png);
+  background-size: cover;
+}
+
+.user-show {
+  margin-top: 0;
+}
+
+.link-nav {
+  color: #fcfcfc;
+  text-decoration: none;
+  margin-inline: 5px;
+}
+
+.link-nav:hover {
+  color: #fcfcfc;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  margin-inline: 10px;
+  padding-inline: 15px;
 }

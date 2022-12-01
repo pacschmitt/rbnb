@@ -1,6 +1,9 @@
-<h1>add new gear</h1>
-
- <%= render "form", gear: @gear %>
-
-<%= link_to "Back to my list", user_gears_path(current_user) %>
-<%= link_to "Back to main page", root_path %>
+<div class="page-container">
+  <div class="form-container col-lg-12">
+    <div class="form-inputs text-center col-lg-6">
+      <h1>Add new gear</h1>
+      <%= render "form", gear: @gear %>
+      <%= link_to "Back to my list", user_path(current_user), class: "btn btn-paco" %>
+    </div>
+  </div>
+</div>

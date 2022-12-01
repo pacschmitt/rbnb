@@ -1,8 +1,12 @@
-<h1>Create Booking</h1>
-
-<%= simple_form_for([@gear, @booking]) do |f| %>
-<%= f.input :start_date, as: :date %>
-<%= f.input :end_date, as: :date %>
-<%= f.submit %>
-<% end %>
-<hr>
+<div class="page-container">
+  <div class="form-container col-lg-12">
+  <div class="form-inputs col-lg-10 text-center">
+      <h1>Create Booking</h1>
+      <%= simple_form_for([@gear, @booking]) do |f| %>
+      <%= f.input :start_date, as: :date, input_html: {class: "rounded-pill"} %>
+      <%= f.input :end_date, as: :date, input_html: {class: "rounded-pill"} %>
+      <%= f.submit class: "btn btn-paco" %>
+      <% end %>
+  </div>
+  </div>
+</div>

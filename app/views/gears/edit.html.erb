@@ -1,6 +1,12 @@
- <h2>Edit gear</h2>
+ <div class="page-container">
+  <div class="form-container col-lg-12">
+    <div class="form-inputs col-lg-8 text-center">
+        <h2>Edit gear</h2>
 
- <%= render "form", gear: @gear %>
+        <%= render "form", gear: @gear %>
 
-<%= link_to "Back to my list", gear_path(@gear), class:"btn btn-primary" %>
-<%= link_to "Back to main page", root_path, class:"btn btn-primary"%>
+        <%= link_to "Back to my post", gear_path(@gear), class:"btn btn-paco mb-2" %>
+        <%= link_to "Back to main page", root_path, class:"btn btn-paco"%>
+    </div>
+  </div>
+ </div>
