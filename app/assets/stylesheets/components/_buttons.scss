@@ -1,25 +1,27 @@
 .btn-paco {
   border-radius: 25px;
   background-color: rgba(0, 0, 0, 0.1);
-  border: 1px solid blue;
-  color: blue;
+  border: 1px solid #00e78c;
+  color: #00e78c;
   margin-bottom: 3px;
 }
 
 .btn-paco:hover {
-  border: 1px solid black;
+  border: 1px solid #03c97b;
+  color: #03c97b;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
 .btn-alfo {
   border-radius: 25px;
   background-color: transparent;
-  border: 1px solid black;
-  color: black;
+  border: 1px solid white;
+  color: white;
 }
 
 .btn-alfo:hover {
   border: 1px solid grey;
+  color: grey;
   background-color: rgba(3, 6, 9, 0.3);
 }
 
