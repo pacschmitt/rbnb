@@ -7,7 +7,7 @@
     <% @bookings.each do |booking| %>
       <div class="card-product">
       <% if booking.gear.photo.key.nil? %>
-        <%= cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", crop: :fill %>
+        <%= image_tag "defaultprofile", crop: :fill %>
       <% else %>
         <%= cl_image_tag booking.gear.photo.key, crop: :fill %>
       <% end %>
@@ -45,6 +45,7 @@
           </div>
         <% end %>
     </div>
+    <%= link_to "Upload New gear", new_gear_path, class:"btn btn-paco m-2" %>
   <%= link_to "Modify my profile", edit_user_registration_path, class:"btn btn-paco mt-3" %>
   <%= link_to "Back to main page", root_path, class:"btn btn-paco mt-3"%>
   </div>

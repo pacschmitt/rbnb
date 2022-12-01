@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save
       redirect_to @gear
+      flash.alert = "You've created a new Booking"
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,6 +32,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.destroy
     redirect_to root_path
+    flash.alert = "You've Deleted your Booking"
   end
 
   private
