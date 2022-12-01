@@ -1,8 +1,9 @@
-<div class="page-container">
-  <div class="title-top">
-  <h1>Browsing</h1>
-  <%# <%= link_to "Upload New gear", new_gear_path, class:"btn btn-paco m-2" %>
+<div class="banner-show">
+    <div class="image-banner-dyna">
+      <%= image_tag "defaultbanner", height: 700, width:1806 %>
+    </div>
   </div>
+<div class="page-container-index">
   <div class="ms-3 d-flex flex-row gap-3 flex-wrap mb-5" >
     <% @gears.each do |gear| %>
       <div class="card-trip">
