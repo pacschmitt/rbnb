@@ -16,6 +16,7 @@ class GearsController < ApplicationController
       # SQL
       # @gears = Gear.joins(:user).where(sql_query, query: "%#{params[:query]}%")
       @gears = Gear.global_search(params[:query])
+      image_bg
     else
       @gears = Gear.all
     end
@@ -81,11 +82,29 @@ class GearsController < ApplicationController
   end
 
   def image_bg
-    # image = (cl_image_tag "dwl90cghmju94tsyc7b0z07wlbmq", width: 700, height: 400, crop: :scale)
-    if @gear.category == "cycling"
-      @image = "https://res.cloudinary.com/df2jp0y94/image/upload/v1669389420/cld-sample-2.jpg"
+    case
+    when @gear.category == "Cycling"
+      @image = "cycling"
+    when @gear.category == "Winter-Sports"
+      @image = "winter"
+    when @gear.category == "Outdoors"
+      @image = "outdoor"
+    when @gear.category == "Racket-Sports"
+      @image = "racket"
+    when @gear.category == "Team-Sports"
+      @image = "team"
+    when @gear.category == "Water-Sports"
+      @image = "water"
+    when @gear.category == "Exercice"
+      @image = "gym"
+    when @gear.category == "Golf"
+      @image = "golf"
+    when @gear.category == "Precision-Sports"
+      @image = "precision"
+    when @gear.category == "Skates&Skateboards"
+      @image = "skates"
     else
-      @image = "https://res.cloudinary.com/df2jp0y94/image/upload/c_crop,h_400,w_1506,x_0,y_550/v1669861095/photo-1471506480208-91b3a4cc78be_qcnsvw.jpg"
+      @image = "defaultbanner"
     end
   end
 end
