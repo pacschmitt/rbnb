@@ -1,5 +1,8 @@
 <div id="<%= dom_id booking %>">
  <h2><%=link_to booking.gear.name, gear_path(booking.gear), class: "name-link text-decoration-none text-dark"%></h2>
-  <p>Booked from: <%= booking.start_date %></p>
-  <p>to: <%= booking.end_date %></p>
+  <div>
+    <p>Booked from: <%= booking.start_date %></p>
+    <p>to: <%= booking.end_date %></p>
+    <p><strong>Total: </strong><%= ((booking.end_date - booking.start_date) * booking.gear.price.to_i).to_f %> €</p>
+  </div>
 </div>
