@@ -25,7 +25,12 @@
                 <% end %>
               </div>
           </div>
-                <%= link_to "Details", gear_path(gear), class: "btn btn-paco " %>
+          <% if user_signed_in?  %>
+            <%= link_to "Details", gear_path(gear), class: "btn btn-paco details-login-d" %>
+           <%= link_to "Book now", "/gears/#{gear.id}/bookings/new", class: "btn btn-paco details-login-b"%>
+          <% else %>
+                <%= link_to "Details", gear_path(gear), class: "btn btn-paco details-nologin" %>
+          <% end %>
       </div>
       <% end %>
   </div>
