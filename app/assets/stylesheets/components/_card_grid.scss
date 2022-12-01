@@ -1,0 +1,91 @@
+.container-about {
+  text-align: left;
+}
+
+
+.about-section {
+  text-align: center;
+}
+
+
+.img-about {
+  width: 300px;
+  height: 300px;
+}
+
+.img-him {
+  width: 300px;
+  height: 300px;
+}
+
+.img-sport {
+  width: 300px;
+  height: 300px;
+}
+
+#my-image1 {
+  background-image: url("https://images.unsplash.com/photo-1444491741275-3747c53c99b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHNwb3J0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60");
+  box-shadow: 0px 8px 30px 6px rgba(0,0,0,0.44);
+  height: 400px;
+  width: 400px;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 16px;
+  border-radius: 25px;
+}
+
+#my-image2 {
+  background-image: url("https://i8.amplience.net/i/jpl/jd_457628_a?qlt=92&w=950&h=1212&v=1&fmt=auto");
+  box-shadow: 0px 8px 30px 6px rgba(0,0,0,0.44);
+  height: 400px;
+  width: 400px;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 16px;
+  border-radius: 25px;
+}
+
+#my-image3 {
+  background-image: url("https://www.amcustomclothing.co.uk/wp-content/uploads/2020/02/Sportswear-Featured.jpg");
+  box-shadow: 0px 8px 30px 6px rgba(0,0,0,0.44);
+  height: 400px;
+  width: 400px;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 16px;
+  border-radius: 25px;
+}
+
+#my-image button {
+  height: 30px;
+  // position: absolute;
+  // bottom: 0;
+  // text-align: center;
+}
+
+#my-image2 button {
+  height: 30px;
+
+
+}
+
+#my-image3 button {
+  height: 30px;
+  // position: absolute;
+  // bottom: 0;
+}
+
+// .container {
+//   position: relative;
+// }
+
+.body {
+  background-image: url("https://files.slack.com/files-pri/T02NE0241-F04DCDUHXV0/captura_de_pantalla_2022-12-01_a_la_s__12.24.57.png");
+  height: 500px;
+}
