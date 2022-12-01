@@ -27,25 +27,25 @@
     <div class="d-flex flex-row gap-3 flex-wrap justify-content-center d-none" data-hello-target="gears">
       <% @user.gears.each do |gear| %>
           <div class="card-trip">
-            <% if gear.photo.key.nil? %>
-              <%= image_tag "logo", crop: :scale %>
-            <% else %>
-              <%= cl_image_tag gear.photo.key, crop: :fill %>
-            <% end %>
-              <div class="card-trip-infos">
+      <% if gear.photo.key.nil? %>
+        <%= image_tag "logo", crop: :scale %>
+      <% else %>
+        <%= cl_image_tag gear.photo.key, crop: :fill %>
+      <% end %>
+          <div class="card-trip-infos">
               <div>
                 <%= render gear %>
               </div>
               <div class="photo-price">
                 <h2 class="card-trip-pricing"><%= gear.price %> €</h2>
-                  <% if current_user.photo.key.nil? %>
-                      <%= cl_image_tag "wschhrw6zws4c53na6yp43y0tc9r", class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                      <% else %>
+                <% if gear.user.photo.key.nil? %>
+                  <%= image_tag "defaultprofile", crop: :fill, class: "card-trip-user avatar-bordered" %>
+                <% else %>
                   <%= cl_image_tag gear.user.photo.key, width: 40, height: 40, gravity: :auto, class: "card-trip-user avatar-bordered" %>
-                  <% end %>
+                <% end %>
               </div>
           </div>
-          </div>
+      </div>
         <% end %>
     </div>
     <%= link_to "Upload New gear", new_gear_path, class:"btn btn-paco m-2" %>

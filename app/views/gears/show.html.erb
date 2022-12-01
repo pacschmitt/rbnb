@@ -18,7 +18,7 @@
         <div>
           <%= render @gear %>
         </div>
-          <h2 class=""><%= @gear.price %> € / day</h2>
+          <h2><%= @gear.price %> € / day</h2>
           <% if @gear.user != current_user %>
             <%= link_to "Book now", "/gears/#{@gear.id}/bookings/new", class: "btn btn-paco"%>
           <% end %>
