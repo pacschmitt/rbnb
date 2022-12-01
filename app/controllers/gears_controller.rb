@@ -6,6 +6,11 @@ class GearsController < ApplicationController
     @gears = Gear.all
     @gears = policy_scope(Gear)
     if params[:query].present?
+      unless Gear.near(params[:query], 20).nil?
+        @gears = Gear.near(params[:query], 20)
+      else
+        @gears = Gear.global_search(params[:query])
+      end
       # sql_query = <<~SQL
       #   gears.name @@ :query
       #   OR gears.description @@ :query
@@ -15,7 +20,6 @@ class GearsController < ApplicationController
       #   OR users.last_name @@ :query
       # SQL
       # @gears = Gear.joins(:user).where(sql_query, query: "%#{params[:query]}%")
-      @gears = Gear.global_search(params[:query])
     else
       @gears = Gear.all
     end
