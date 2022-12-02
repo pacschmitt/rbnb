@@ -14,20 +14,19 @@
           <%= form_with url: gears_path, method: :get, class: "d-flex" do %>
               <%= text_field_tag :query,
                 params[:query],
-                class: "search-bar-left form-control",
+                class: "search-bar-left search-bar form-control",
                 placeholder: "Find a gear"
               %>
               <%= text_field_tag :address,
                 params[:address],
-                class: "search-bar-right form-control",
+                class: "search-bar-right search-bar form-control",
                 placeholder: "Find by location"
               %>
-              <%= submit_tag "Search", class: "btn btn-paco ms-2" %>
+              <%= submit_tag "Browse", class: "btn btn-paco ms-2" %>
             <% end %>
-          <%# <%= link_to "Browse Gear", gears_path, class: "nav-link" %>
         </li>
         <div class="nav-links">
-          <li class="nav-item active">
+          <li class="nav-item">
             <%= link_to "About", about_path, class: "link-nav" %>
           </li>
           <li class="nav-item">

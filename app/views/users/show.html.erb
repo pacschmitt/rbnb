@@ -2,7 +2,7 @@
   <div class="container col-lg-10 d-flex flex-column" data-controller="hello">
       <h2 class="text-center">Hello <%= current_user.first_name.capitalize %> !</h2>
 
-    <button data-action="click->hello#show" class="btn btn-paco m-2 btn-expand">Display my bookings</button>
+    <button data-action="click->hello#show" class="btn btn-paco m-2 btn-expand" data-hello-target="button">Display my bookings</button>
     <div class="d-flex flex-row gap-3 flex-wrap justify-content-center d-none" data-hello-target="bookings">
     <% @bookings.each do |booking| %>
       <div class="card-product">
@@ -24,7 +24,7 @@
     </div>
 
 
-  <button data-action="click->hello#display" class="btn btn-paco m-2 btn-expand">Display my gears</button>
+  <button data-action="click->hello#display" class="btn btn-paco m-2 btn-expand" data-hello-target="xbutton">Display my gears</button>
     <div class="d-flex flex-row gap-3 flex-wrap justify-content-center d-none" data-hello-target="gears">
       <% @user.gears.each do |gear| %>
           <div class="card-trip">

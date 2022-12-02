@@ -25,12 +25,14 @@
                 <% end %>
               </div>
           </div>
-          <% if user_signed_in? && gear.user != current_user %>
-            <%= link_to "Details", gear_path(gear), class: "btn btn-paco details-login-d btn-index" %>
-           <%= link_to "Book now", "/gears/#{gear.id}/bookings/new", class: "btn btn-paco details-login-b btn-index"%>
-          <% else %>
-                <%= link_to "Details", gear_path(gear), class: "btn btn-paco details-nologin btn-index" %>
-          <% end %>
+          <div class="align-items-center mb-0">
+            <% if user_signed_in? && gear.user != current_user %>
+              <%= link_to "Details", gear_path(gear), class: "btn btn-paco details-login-d btn-index" %>
+            <%= link_to "Book now", "/gears/#{gear.id}/bookings/new", class: "btn btn-paco details-login-b btn-index"%>
+            <% else %>
+                  <%= link_to "Details", gear_path(gear), class: "btn btn-paco details-nologin btn-index" %>
+            <% end %>
+          </div>
       </div>
       <% end %>
   </div>
