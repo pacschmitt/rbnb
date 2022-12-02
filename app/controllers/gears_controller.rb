@@ -6,11 +6,11 @@ class GearsController < ApplicationController
     @gears = Gear.all
     @gears = policy_scope(Gear)
     if params[:query].present?
-      unless Gear.near(params[:query], 20).nil?
-        @gears = Gear.near(params[:query], 20)
-      else
+      # unless Gear.near(params[:query], 20).nil?
+      #   @gears = Gear.near(params[:query], 20)
+      # else
         @gears = Gear.global_search(params[:query])
-      end
+      #end
       # sql_query = <<~SQL
       #   gears.name @@ :query
       #   OR gears.description @@ :query
