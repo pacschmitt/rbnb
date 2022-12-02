@@ -8,9 +8,9 @@
     <div class="image-gear-show d-flex flex-row ">
       <div class="photo text-center">
       <% if @gear.photo.key.nil? %>
-          <%= image_tag "logo", width: 500, height: 500,class:"search-bar img" %>
+          <%= image_tag "logo", width: 500, height: 500,class:"show-img img" %>
         <% else %>
-          <%= cl_image_tag @gear.photo.key, width: 500, height: 500, class: "search-bar img" %>
+          <%= cl_image_tag @gear.photo.key, width: 500, height: 500, class: "show-img img" %>
         <% end %>
       </div>
       <hr>
