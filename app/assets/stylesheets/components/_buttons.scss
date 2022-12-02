@@ -50,6 +50,7 @@
   border-radius: 25px;
   border: 2px solid #00e78c;
   background-color: rgba(0, 0, 0, 0.1);
+  color: white;
 }
 
 .details-nologin {
@@ -73,6 +74,12 @@
 }
 
 .search-bar:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px solid #00e78c;
+  color: #fcfcfc;
+}
+
+.search-bar:active {
   background-color: rgba(0, 0, 0, 0.1);
   border: 2px solid #00e78c;
   color: #fcfcfc;

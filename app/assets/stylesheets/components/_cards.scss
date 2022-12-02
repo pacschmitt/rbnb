@@ -3,10 +3,14 @@
   width: 380px;
   overflow: hidden;
   background: black;
-  box-shadow: 0 0 10px gray;
+  box-shadow: 0 0 10px white;
   border-radius: 15px;
   margin-bottom: 20px;
+  transition: .3s ease-in-out;
+}
 
+.card-trip:hover{
+  transform: scale(1.02);
 }
 
 .card-trip > img {
