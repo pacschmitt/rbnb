@@ -1,6 +1,6 @@
 .card-trip {
   color:white;
-  width: 380px;
+  width: 400px;
   overflow: hidden;
   background: black;
   box-shadow: 0 0 10px white;
@@ -16,7 +16,7 @@
 .card-trip > img {
   height: 200px;
   width: 100%;
-  background-size: cover;
+  object-fit: cover
 }
 
 .card-trip h2 {
@@ -33,15 +33,16 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  height: 150px;
 }
 
-.card-trip-infos .photo-price {
-  width: 90px;
+.card-trip-pricing {
+  width: 55px;
 }
 
 .card-trip-infos .card-trip-user {
