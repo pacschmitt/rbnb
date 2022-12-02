@@ -5,20 +5,22 @@ class GearsController < ApplicationController
   def index
     @gears = Gear.all
     @gears = policy_scope(Gear)
+
     if params[:query].present?
-      # sql_query = <<~SQL
-      #   gears.name @@ :query
-      #   OR gears.description @@ :query
-      #   OR gears.category @@ :query
-      #   OR gears.address @@ :query
-      #   OR users.first_name @@ :query
-      #   OR users.last_name @@ :query
-      # SQL
-      # @gears = Gear.joins(:user).where(sql_query, query: "%#{params[:query]}%")
-      @gears = Gear.global_search(params[:query])
+      if params[:address].present?
+        selection = Gear.near(params[:address], 20)
+        @gears = selection.global_search(params[:query]) if params[:query].present?
+      else
+        @gears = Gear.global_search(params[:query])
+      end
     else
-      @gears = Gear.all
+      if params[:address].present?
+        @gears = Gear.near(params[:address], 20)
+      else
+        @gears = Gear.all
+      end
     end
+
     @markers = @gears.geocoded.map do |gear|
       {
         lat: gear.latitude,
@@ -93,7 +95,7 @@ class GearsController < ApplicationController
     when @gear.category == "Team-Sports"
       @image = "team"
     when @gear.category == "Water-Sports"
-      @image = "water"
+      @image = "water.PNG"
     when @gear.category == "Exercice"
       @image = "gym"
     when @gear.category == "Golf"

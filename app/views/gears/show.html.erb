@@ -4,23 +4,25 @@
       <%= image_tag @image, height: 800, width:1806, crop: :fill %>
     </div>
   </div>
-  <div class="container-show text-center">
+  <div class="container-show">
     <div class="image-gear-show d-flex flex-row ">
-      <div class="photo">
+      <div class="photo text-center">
       <% if @gear.photo.key.nil? %>
-          <%= image_tag "logo", width: 500, height: 500,class:"search-bar" %>
+          <%= image_tag "logo", width: 500, height: 500,class:"search-bar img" %>
         <% else %>
-          <%= cl_image_tag @gear.photo.key, width: 500, height: 500, class: "search-bar" %>
+          <%= cl_image_tag @gear.photo.key, width: 500, height: 500, class: "search-bar img" %>
         <% end %>
       </div>
       <hr>
-      <div class="gear-info text-center text-dark">
+      <div class="gear-info">
         <div>
           <%= render @gear %>
         </div>
           <h2><%= @gear.price %> € / day</h2>
           <% if @gear.user != current_user %>
+          <div class="text-center">
             <%= link_to "Book now", "/gears/#{@gear.id}/bookings/new", class: "btn btn-paco"%>
+          </div>
           <% end %>
       </div>
     </div>
@@ -31,8 +33,8 @@
       <% if user_signed_in? %>
         <%= link_to "Edit", edit_gear_path(@gear), class: "btn btn-paco" if policy(@gear).edit? %>
         <%= link_to "Delete", gear_path(@gear), class: "btn btn-alfo", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } if policy(@gear).destroy? %>
-        <%= link_to "Back", gears_path, class: "btn btn-paco"%>
       <% end %>
+    <%= link_to "Back", gears_path, class: "btn btn-paco"%>
     </div>
 
 </div>

@@ -14,23 +14,27 @@
           <%= form_with url: gears_path, method: :get, class: "d-flex" do %>
               <%= text_field_tag :query,
                 params[:query],
-                class: "search-bar form-control",
+                class: "search-bar-left search-bar form-control",
                 placeholder: "Find a gear"
               %>
-              <%= submit_tag "Search", class: "btn btn-paco ms-2" %>
+              <%= text_field_tag :address,
+                params[:address],
+                class: "search-bar-right search-bar form-control",
+                placeholder: "Find by location"
+              %>
+              <%= submit_tag "Browse", class: "btn btn-paco ms-2" %>
             <% end %>
-          <%# <%= link_to "Browse Gear", gears_path, class: "nav-link" %>
         </li>
         <div class="nav-links">
-          <li class="nav-item active">
+          <li class="nav-item">
             <%= link_to "About", about_path, class: "link-nav" %>
           </li>
           <li class="nav-item">
             <%= link_to "F.A.Q", faq_path, class: "link-nav" %>
           </li>
-        </div>
+
           <% if user_signed_in? %>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown ms-3 ">
                 <% if current_user.photo.key.nil? %>
                     <%= image_tag "defaultprofile", crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                 <% else %>
@@ -42,9 +46,10 @@
               </div>
             </li>
           <% else %>
-            <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <li class="align-items-center">
+                <%= link_to "Login", new_user_session_path, class: "link-nav ms-3" %>
             </li>
+          </div>
           <% end %>
       </ul>
     </div>

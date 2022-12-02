@@ -47,9 +47,26 @@
 }
 
 .search-bar {
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 25px;
   border: 2px solid #00e78c;
+  color: #fcfcfc;
+}
+
+
+.search-bar-left {
+  border-radius: 25px 0px 0px 25px;
+  border: 2px solid #00e78c;
   background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.search-bar-right {
+  border-radius: 0px 25px 25px 0px;
+  border: 2px solid #00e78c;
+  border-left: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
 }
 
 .details-nologin {
@@ -67,8 +84,39 @@
   margin-bottom: 15px;
 }
 
+.details-show {
+  margin-left: 150px;
+  margin-bottom: 15px;
+}
+
 .search-bar:focus {
   background-color: rgba(0, 0, 0, 0.1);
   border: 2px solid #00e78c;
   color: #fcfcfc;
+}
+
+.search-bar:active {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px solid #00e78c;
+  color: #fcfcfc;
+}
+
+.btn-expand {
+  width: 250px;
+  transition: .4s ease-in-out;
+}
+
+.active {
+  width: 800px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px solid #00e78c;
+  color: #fcfcfc;
+}
+
+.delete-icon {
+  text-align: end;
+}
+
+.btn-index {
+  bottom: 15px;
 }
