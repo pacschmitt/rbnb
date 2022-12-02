@@ -67,14 +67,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_210003) do
     t.index ["user_id"], name: "index_gears_on_user_id"
   end
 
-  create_table "pages", force: :cascade do |t|
-    t.string "about"
-    t.string "html"
-    t.string "erb"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "pg_search_documents", force: :cascade do |t|
     t.text "content"
     t.string "searchable_type"
