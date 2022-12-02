@@ -95,7 +95,7 @@ class GearsController < ApplicationController
     when @gear.category == "Team-Sports"
       @image = "team"
     when @gear.category == "Water-Sports"
-      @image = "water"
+      @image = "water.PNG"
     when @gear.category == "Exercice"
       @image = "gym"
     when @gear.category == "Golf"

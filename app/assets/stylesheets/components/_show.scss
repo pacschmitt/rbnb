@@ -6,6 +6,7 @@
   margin: 0 auto;
   margin-top: 100px;
   padding: 20px;
+  width: 600px;
 }
 
 .container-show {
@@ -22,8 +23,13 @@
 
 .photo {
   width: 650px;
-  object-fit: cover;
   margin-top: -100px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .gear-links {
