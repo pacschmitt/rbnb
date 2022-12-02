@@ -1,5 +1,5 @@
 <div class="page-container">
-<div class="form-container col-log-12">
+  <div class="form-container col-log-12">
     <div class="text-center">
     <h2 class="m-3">Edit <%= resource_name.to_s.humanize %></h2>
 
@@ -7,10 +7,10 @@
       <%= f.error_notification %>
 
       <div class="form-inputs col-lg-8">
-        <%= f.input :first_name, input_html: {class: "rounded-pill"} %>
-        <%= f.input :last_name, input_html: {class: "rounded-pill"} %>
-        <%= f.input :photo, as: :file, input_html: {class: "rounded-pill"} %>
-        <%= f.input :email, required: true, autofocus: true, input_html: {class: "rounded-pill"} %>
+        <%= f.input :first_name, input_html: {class: "search-bar"} %>
+        <%= f.input :last_name, input_html: {class: "search-bar"} %>
+        <%= f.input :photo, as: :file, input_html: {class: "search-bar"} %>
+        <%= f.input :email, required: true, autofocus: true, input_html: {class: "search-bar"} %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -19,14 +19,14 @@
         <%= f.input :password,
                     hint: "leave it blank if you don't want to change it",
                     required: false,
-                    input_html: { autocomplete: "new-password" }, input_html: {class: "rounded-pill"} %>
+                    input_html: { autocomplete: "new-password" }, input_html: {class: "search-bar"} %>
         <%= f.input :password_confirmation,
                     required: false,
-                    input_html: { autocomplete: "new-password" }, input_html: {class: "rounded-pill"} %>
+                    input_html: { autocomplete: "new-password" }, input_html: {class: "search-bar"} %>
         <%= f.input :current_password,
                     hint: "we need your current password to confirm your changes",
                     required: true,
-                    input_html: { autocomplete: "current-password" }, input_html: {class: "rounded-pill"} %>
+                    input_html: { autocomplete: "current-password" }, input_html: {class: "search-bar"} %>
       </div>
 
       <div class="form-actions">
@@ -38,7 +38,7 @@
 
     <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></p>
 
-    <%= link_to "Back", :back, class: "btn btn-alfo" %>
+    <%= link_to "Back", :back, class: "btn btn-alfo mb-3" %>
     </div>
   </div>
 </div>

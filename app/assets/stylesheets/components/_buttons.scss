@@ -50,6 +50,7 @@
   border-radius: 25px;
   border: 2px solid #00e78c;
   background-color: rgba(0, 0, 0, 0.1);
+  color: white;
 }
 
 .details-nologin {
@@ -78,9 +79,15 @@
   color: #fcfcfc;
 }
 
+.search-bar:active {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px solid #00e78c;
+  color: #fcfcfc;
+}
+
 .btn-expand {
   width: 250px;
-  margin-left: 460px !important;
+  transition: .4s ease-in-out;
 }
 
 .delete-icon {
