@@ -14,8 +14,13 @@
           <%= form_with url: gears_path, method: :get, class: "d-flex" do %>
               <%= text_field_tag :query,
                 params[:query],
-                class: "search-bar form-control",
+                class: "search-bar-left form-control",
                 placeholder: "Find a gear"
+              %>
+              <%= text_field_tag :address,
+                params[:address],
+                class: "search-bar-right form-control",
+                placeholder: "Find by location"
               %>
               <%= submit_tag "Search", class: "btn btn-paco ms-2" %>
             <% end %>

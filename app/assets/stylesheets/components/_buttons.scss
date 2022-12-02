@@ -46,9 +46,17 @@
   background-color: rgba(9, 6, 3, 0.3);
 }
 
-.search-bar {
-  border-radius: 25px;
+.search-bar-left {
+  border-radius: 25px 0px 0px 25px;
   border: 2px solid #00e78c;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.search-bar-right {
+  border-radius: 0px 25px 25px 0px;
+  border: 2px solid #00e78c;
+  border-left: none;
   background-color: rgba(0, 0, 0, 0.1);
   color: white;
 }
@@ -92,4 +100,8 @@
 
 .delete-icon {
   text-align: end;
+}
+
+.btn-index {
+  bottom: 15px;
 }
